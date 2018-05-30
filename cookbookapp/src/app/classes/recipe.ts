@@ -1,11 +1,11 @@
-import { Recipestep } from './recipestep';
+import { RecipeStep } from './recipestep';
 import { Product } from './product';
 import { RecipeCategory } from './recipeCategory';
 
 export class Recipe {
 
     name: string;
-    recipesteps: Recipestep[];
+    recipesteps: RecipeStep[];
     ingredients: Product[];
     category: RecipeCategory;
 

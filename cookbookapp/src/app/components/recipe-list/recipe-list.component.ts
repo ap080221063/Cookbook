@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Recipe } from '../../classes/recipe';
+import { RecipeCategory } from '../../classes/recipeCategory';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,9 +9,6 @@ import { Recipe } from '../../classes/recipe';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit, OnDestroy {
-
-  componentRecipeListSubscription: Subscription;
-  componentRecipeList: Recipe[];
 
   constructor() {
 
