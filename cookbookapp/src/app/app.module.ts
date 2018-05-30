@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeCategoryListComponent } from './components/recipe-category-list/recipe-category-list.component';
+import { RecipeCategoryService } from './services/recipe-category.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { RecipeCategoryListComponent } from './components/recipe-category-list/r
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    RecipeCategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

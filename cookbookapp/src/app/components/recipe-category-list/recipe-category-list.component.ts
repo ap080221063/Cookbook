@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeCategory } from '../../classes/recipeCategory';
 import { Subscription } from 'rxjs/Subscription';
+import { RecipeCategoryService } from '../../services/recipe-category.service';
 
 @Component({
   selector: 'app-recipe-category-list',
@@ -9,12 +10,19 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class RecipeCategoryListComponent implements OnInit {
 
-  componentRecipeCategoryListSubscription: Subscription;
-  componentRecipeCategoryList: RecipeCategory[];
+  // public recipeCategoryService: RecipeCategoryService;
+  recipeCategoryListSubscription: Subscription;
+  recipeCategoryList: RecipeCategory[];
 
-  constructor() { }
+  constructor(public recipeCategoryService: RecipeCategoryService) {
+    this.recipeCategoryList = [];
+    this.recipeCategoryListSubscription = this.recipeCategoryService.recipeCategoryList
+    .subscribe(categories => {this.recipeCategoryList = categories; });
+
+  }
 
   ngOnInit() {
+    this.recipeCategoryService.getAllRecipeCategories();
   }
 
 }
